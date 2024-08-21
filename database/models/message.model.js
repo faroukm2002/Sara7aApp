@@ -5,9 +5,10 @@ const messageSchema = new Schema({
     type: String,
     required: true,
   },
+  receivedId: {
+    type: SchemaTypes.ObjectId, 
+  }
+}, { timestamps: true });
 
-  receivedId:SchemaTypes.ObjecytId
-  
-},{timestamps: true});
-
-export const messageModel=model('message',messageSchema)
+export const messageModel = model('message', messageSchema);
+ 
