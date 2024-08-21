@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 
 export const dbConnection=()=>{
-    mongoose.connect('mongodb://127.0.0.1:27017/SarahaApp_week7')
+    mongoose.connect(process.env.DB_CONNECTION)
     .then(()=>{
         console.log("database connection")
     }).catch((err)=>{

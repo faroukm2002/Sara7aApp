@@ -17,7 +17,7 @@ import bcrypt from "bcrypt"
         const  {email,password} = req.body;
         const user =await  userModel.findOne({email})
         if(user && bcrypt.compareSync(password,user.password)) {
-            let token=jwt.sign({name:user.name,userId:user._id},process.env.SECRET_KEY)
+            let token=jwt.sign({name:user.name,userId:user._id},process.env.JWT_KEY)
             return   res.json({message:"Success",token:token})
          } 
          res.json({message:"incorrect password or email"})
