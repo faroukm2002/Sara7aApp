@@ -3,8 +3,8 @@ import { dbConnection } from './database/dbConnection.js'
 import userRouter from './src/modules/user/user.routes.js'
 import dotenv from 'dotenv';
 import messageRouter from './src/modules/message/message.routes.js';
-import { AppError } from './src/utils/AppError.js';
 import { globalError } from './src/middleware/globalErrorMiddleware.js';
+import { AppError } from './src/utils/AppError.js';
 
 const app = express()
 const port = 3000
@@ -26,11 +26,7 @@ dbConnection()
   // globalError
   app.use(globalError);
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('Welcome to SarahaApp'))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 
-// handle error outside express 
-process.on('unhandledRejection',(err)=>{
-    console.log('errorrrrrrrrrrrrrr', err)
-})
