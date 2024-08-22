@@ -17,7 +17,7 @@ export const sendEmail = async (options) => {
         html: htmlCode(options.link),
     });
 
-    console.log("Message sent: %s", info.messageId);
+    // console.log("Message sent: %s", info.messageId);
 }
 
 

@@ -2,8 +2,9 @@ import { userModel } from "../../../database/models/user.model.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { sendEmail } from "../../emails/nodemailer.js";
+import { catchAsyncError } from "../../utils/catchAsyncError.js";
 
-const signUp = async (req, res) => {
+const signUp = catchAsyncError(async (req, res) => {
     const { name, email, password, age } = req.body;
     const existingUser = await userModel.findOne({ email });
     if (existingUser) return res.json({ message: "Email already exists" });
@@ -16,9 +17,9 @@ const signUp = async (req, res) => {
     await sendEmail({ email, link });
 
     res.json({ message: "Success, please verify your email" });
-};
+})
 
-const signIn=async(req,res)=>{
+const signIn=catchAsyncError(async(req,res)=>{
     const  {email,password} = req.body;
     const user =await  userModel.findOne({email})
     if(user && bcrypt.compareSync(password,user.password)) {
@@ -27,9 +28,9 @@ const signIn=async(req,res)=>{
      } 
      res.json({message:"incorrect password or email"})
  
-    }  
+    }  )
 
-const confirmEmail = async (req, res) => {
+const confirmEmail = catchAsyncError(async (req, res) => {
     const { token } = req.params;
     
     jwt.verify(token, process.env.JWT_KEY, async (err, decoded) => {
@@ -43,7 +44,7 @@ const confirmEmail = async (req, res) => {
         
             res.json({ message: "success"});
     });
-};
+})
 
 export {
     signUp,
