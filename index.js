@@ -13,6 +13,7 @@ dotenv.config();
 app.use(userRouter)
 app.use('/message',messageRouter)
 
+
 dbConnection()
 app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
