@@ -14,6 +14,7 @@ dotenv.config();
 
 app.use(userRouter)
 app.use('/message',messageRouter)
+app.get('/', (req, res) => res.json({message:"Welcome to SarahaApp!"}));
 
 
 dbConnection()
@@ -26,7 +27,6 @@ dbConnection()
   // globalError
   app.use(globalError);
 
-app.get('/', (req, res) => res.json({message:"Welcome to SarahaApp!"}));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 
