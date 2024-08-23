@@ -26,7 +26,7 @@ dbConnection()
   // globalError
   app.use(globalError);
 
-app.get('/', (req, res) => res.send('Welcome to SarahaApp'))
+app.get('/', (req, res) => res.json({message:"Welcome to SarahaApp!"}));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 
