@@ -1,6 +1,6 @@
-# SarahApp Backend
+# SarahaApp Backend
 
-Welcome to the **SarahApp Backend**, a server-side application built with Node.js and Express.js. This application allows users to send and receive anonymous messages. It includes features such as user authentication, messaging, and user profile management.
+Welcome to the **SarahaApp Backend**, a server-side application built with Node.js and Express.js. This application allows users to send and receive anonymous messages. It includes features such as user authentication, messaging, and user profile management.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ Welcome to the **SarahApp Backend**, a server-side application built with Node.j
 
 ## Project Overview
 
-The SarahApp Backend provides core functionalities needed for a messaging platform where users can send and receive anonymous messages. It leverages modern technologies such as **Node.js**, **Express.js**, and **MongoDB** for a scalable and efficient backend solution.
+The SarahaApp Backend provides core functionalities needed for a messaging platform where users can send and receive anonymous messages. It leverages modern technologies such as **Node.js**, **Express.js**, and **MongoDB** for a scalable and efficient backend solution.
 
 ## Features
 
